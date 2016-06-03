@@ -1,0 +1,10 @@
+var mycount = <%= @cart.total_items %>
+
+$("#notice").hide();
+$('#cart').html("<%= j (render @cart) %>");
+
+if (mycount == 1){
+	$('#cart').visualEffect('blind_down');
+}
+
+$('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#114411'}, 1000);
